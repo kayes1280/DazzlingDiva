@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import ThreePieceSection from "./piece";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,6 +10,8 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <h1>Home</h1>
+    <>
+      <ThreePieceSection />
+    </>
   );
 }
