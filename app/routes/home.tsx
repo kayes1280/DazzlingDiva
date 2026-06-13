@@ -1,7 +1,7 @@
 import type { Route } from "./+types/home";
-import Hero from "./hero.tsx";
-import NewArrivals from "./newarrivals.tsx";
-import ThreePieceSection from "./piece.tsx";
+import Hero from "./hero";
+import NewArrivals from "./newarrivals";
+import ThreePieceSection from "./piece";
 
 export function meta({}: Route.MetaArgs) {
   return [
