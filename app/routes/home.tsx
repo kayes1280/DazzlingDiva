@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import CategorySection from "./cateGory";
 import Hero from "./hero";
 import NewArrivals from "./newarrivals";
 import ThreePieceSection from "./piece";
@@ -16,6 +17,7 @@ export default function Home() {
     
     <>
       <Hero />
+      <CategorySection />
       <NewArrivals />
       <ThreePieceSection />
     </>

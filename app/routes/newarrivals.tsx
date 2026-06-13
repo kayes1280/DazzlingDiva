@@ -24,46 +24,43 @@ const products = [
 
 export default function NewArrivals() {
   return (
-    <section className="py-12 bg-[#F2F4F8]">
+    <section className="bg-[#F2F4F8] py-10 sm:py-12 lg:py-14">
       {/* Heading */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-semibold text-purple-900">
+      <div className="mx-auto mb-8 w-[90%] text-center sm:mb-10">
+        <h2 className="text-2xl font-semibold text-purple-900 sm:text-3xl">
           New Arrivals
         </h2>
-        <p className="text-gray-600 mt-1">
+        <p className="mt-1 text-sm text-gray-600 sm:text-base">
           Just In Great Product With Great Deal
         </p>
       </div>
 
       {/* Products */}
-      <div className="w-[90%] mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="mx-auto grid w-[90%] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((item) => (
-          <div
-            key={item.id}
-            className=" w-[500px] rounded-xl overflow-hidden relative group"
-          >
+          <div key={item.id} className="relative w-full overflow-hidden rounded-xl">
             {/* Image */}
-            <div className="relative">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-slate-100">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[600px] object-cover rounded-sm"
+                className="h-full w-full object-cover object-top"
               />
 
               {/* Badge */}
-              <span className="absolute top-3 left-3 bg-yellow-400 text-xs px-3 py-1 rounded-full">
+              <span className="absolute left-3 top-3 rounded-full bg-yellow-400 px-3 py-1 text-xs">
                 New Arrival
               </span>
 
               {/* Price */}
-              <div className="absolute bottom-3 right-3 bg-white px-5 py-2.5 rounded-md shadow text-sm font-semibold hover:bg-yellow-400 hover:text-white transition-colors duration-300">
+              <div className="absolute bottom-3 right-3 rounded-md bg-white px-4 py-2 text-sm font-semibold shadow transition-colors duration-300 hover:bg-yellow-400 hover:text-white sm:px-5 sm:py-2.5">
                 {item.price}
               </div>
             </div>
 
             {/* Title */}
             <div className="py-4">
-              <h3 className="text-sm font-medium text-gray-800 font-bold">
+              <h3 className="text-sm font-bold leading-6 text-gray-800 sm:text-base">
                 {item.title}
               </h3>
             </div>

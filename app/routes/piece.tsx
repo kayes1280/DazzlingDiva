@@ -83,42 +83,42 @@ const sections = [
 
 export default function ThreePieceSection() {
   return (
-    <section className="bg-[#F2F4F8] py-10">
+    <section className="bg-[#F2F4F8] py-10 sm:py-12">
       <div className="w-[90%] mx-auto">
         {sections.map((section, index) => (
-          <div key={index} className="mt-20">
+          <div key={index} className="mt-12 sm:mt-16 lg:mt-20">
             {/* Header */}
-            <div className="bg-white rounded-md p-3 md:p-4 flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
-              <h2 className="text-2xl md:text-4xl font-bold text-black">
+            <div className="mb-8 flex items-center justify-between gap-4 rounded-md bg-white p-3 shadow-sm sm:mb-10 md:p-4">
+              <h2 className="text-xl font-bold text-black sm:text-2xl md:text-4xl">
                 {section.heading}
               </h2>
 
-              <button className="bg-[#FFD500] px-6 py-3 font-semibold rounded transition-all duration-300 hover:bg-[#4A003F] hover:text-white">
+              <button className="whitespace-nowrap rounded bg-[#FFD500] px-4 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-[#4A003F] hover:text-white sm:px-6 sm:py-3 sm:text-base">
                 {section.button}
               </button>
             </div>
 
             {/* Products */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
               {section.products.map((product) => (
-                <div key={product.id}>
+                <div key={product.id} className="w-full">
                   {/* Image */}
-                  <div className="relative overflow-hidden rounded-md group">
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-slate-100">
                     <span className="absolute top-3 left-0 z-10 bg-[#FFD500] text-xs px-3 py-1 rounded-r-full">
                       Save: {product.save}
                     </span>
 
                     <img src={product.image} alt={product.title}
-                      className="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-500" />
+                      className="h-full w-full object-cover object-top" />
                   </div>
 
                   {/* Content */}
                   <div className="pt-4">
-                    <h3 className="text-lg font-semibold leading-6 text-[#1F1F1F] line-clamp-2 min-h-[52px]">
+                    <h3 className="line-clamp-2 min-h-[48px] text-base font-semibold leading-6 text-[#1F1F1F] sm:text-lg sm:min-h-[52px]">
                       {product.title}
                     </h3>
 
-                    <div className="flex items-center gap-3 mt-2">
+                    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm sm:text-base">
                       <span className="font-bold">{product.price}</span>
 
                       <span className="text-gray-600">-</span>
@@ -128,13 +128,13 @@ export default function ThreePieceSection() {
                       </span>
                     </div>
 
-                    <div className="flex gap-2 mt-4">
-                      <button className="flex-1 bg-[#4A003F] text-[#FFD500] py-3 rounded font-semibold flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#FFD500] hover:text-[#4A003F]">
+                    <div className="mt-4 flex gap-2">
+                      <button className="flex flex-1 items-center justify-center gap-2 rounded bg-[#4A003F] px-3 py-3 text-sm font-semibold text-[#FFD500] transition-all duration-300 hover:bg-[#FFD500] hover:text-[#4A003F] sm:text-base">
                         <FaBasketShopping />
                         Add to Cart
                       </button>
 
-                      <button className="px-5 bg-[#FFD500] text-[#4A003F] rounded font-semibold transition-all duration-300 hover:bg-[#4A003F] hover:text-[#FFD500]">
+                      <button className="whitespace-nowrap rounded bg-[#FFD500] px-4 text-sm font-semibold text-[#4A003F] transition-all duration-300 hover:bg-[#4A003F] hover:text-[#FFD500] sm:px-5 sm:text-base">
                         Buy Now
                       </button>
                     </div>
