@@ -99,12 +99,12 @@ export default function ThreePieceSection() {
             </div>
 
             {/* Products */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 xl:grid-cols-4">
               {section.products.map((product) => (
                 <div key={product.id} className="w-full">
                   {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-slate-100">
-                    <span className="absolute top-3 left-0 z-10 bg-[#FFD500] text-xs px-3 py-1 rounded-r-full">
+                    <span className="absolute left-0 top-2 z-10 rounded-r-full bg-[#FFD500] px-2 py-1 text-[10px] sm:top-3 sm:px-3 sm:text-xs">
                       Save: {product.save}
                     </span>
 
@@ -114,11 +114,11 @@ export default function ThreePieceSection() {
 
                   {/* Content */}
                   <div className="pt-4">
-                    <h3 className="line-clamp-2 min-h-[48px] text-base font-semibold leading-6 text-[#1F1F1F] sm:text-lg sm:min-h-[52px]">
+                    <h3 className="line-clamp-2 min-h-[40px] text-sm font-semibold leading-5 text-[#1F1F1F] sm:min-h-[52px] sm:text-lg sm:leading-6">
                       {product.title}
                     </h3>
 
-                    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm sm:text-base">
+                    <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:gap-x-3 sm:text-base">
                       <span className="font-bold">{product.price}</span>
 
                       <span className="text-gray-600">-</span>
@@ -128,13 +128,13 @@ export default function ThreePieceSection() {
                       </span>
                     </div>
 
-                    <div className="mt-4 flex gap-2">
-                      <button className="flex flex-1 items-center justify-center gap-2 rounded bg-[#4A003F] px-3 py-3 text-sm font-semibold text-[#FFD500] transition-all duration-300 hover:bg-[#FFD500] hover:text-[#4A003F] sm:text-base">
+                    <div className="mt-3 grid gap-2 sm:mt-4 sm:flex">
+                      <button className="flex min-h-10 w-full items-center justify-center gap-1 rounded bg-[#4A003F] px-2 py-2 text-xs font-semibold text-[#FFD500] transition-all duration-300 hover:bg-[#FFD500] hover:text-[#4A003F] sm:flex-1 sm:gap-2 sm:px-3 sm:py-3 sm:text-base">
                         <FaBasketShopping />
                         Add to Cart
                       </button>
 
-                      <button className="whitespace-nowrap rounded bg-[#FFD500] px-4 text-sm font-semibold text-[#4A003F] transition-all duration-300 hover:bg-[#4A003F] hover:text-[#FFD500] sm:px-5 sm:text-base">
+                      <button className="min-h-10 whitespace-nowrap rounded bg-[#FFD500] px-2 py-2 text-xs font-semibold text-[#4A003F] transition-all duration-300 hover:bg-[#4A003F] hover:text-[#FFD500] sm:px-5 sm:py-0 sm:text-base">
                         Buy Now
                       </button>
                     </div>
