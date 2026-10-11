@@ -1,87 +1,84 @@
-# Welcome to React Router!
+# Dazzling Diva
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Dazzling Diva is a responsive fashion storefront frontend for showcasing women's clothing and accessories. The current homepage brings together a promotional hero, shopping categories, new arrivals, and featured product sections, with shared navigation and footer components.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+> This repository currently contains a storefront UI prototype. Product data is hard-coded, product imagery is loaded from external image URLs, and there is no commerce backend, checkout flow, or persistent cart yet.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Responsive homepage with a promotional hero and product/category sections.
+- Category cards for Sharee, Three Piece, Two Piece, Hijab, and Royal Abaya.
+- New-arrival and featured product cards with sample product information.
+- Shared navigation with a mobile menu and storefront-style footer.
+- Server-side rendering through React Router.
 
-## Getting Started
+## Tech stack
 
-### Installation
+- **React 19** and **TypeScript** for the UI.
+- **React Router 7** for routing, server rendering, and the production server.
+- **Vite 8** for local development and production builds.
+- **Tailwind CSS 4** with its Vite plugin for styling.
+- **Lucide React** and **React Icons** for icon libraries.
+- **Node.js 20** as the runtime; a multi-stage **Docker** build is included.
 
-Install the dependencies:
+## Requirements
+
+- Node.js 20 or later.
+- npm (the project includes `package-lock.json`).
+
+## Getting started
+
+Install dependencies and start the development server:
 
 ```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
+npm ci
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Open the local URL printed by Vite in your terminal.
 
-## Building for Production
+## Available scripts
 
-Create a production build:
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the React Router development server. |
+| `npm run typecheck` | Generate React Router route types and run TypeScript checks. |
+| `npm run build` | Create the production build in `build/`. |
+| `npm run start` | Serve the production build. Run `npm run build` first. |
+
+## Production
+
+Build and serve the app with Node.js:
 
 ```bash
 npm run build
+npm run start
 ```
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
+Or build and run the included Docker image from the repository root:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+docker build -t dazzling-diva .
+docker run --rm -p 3000:3000 dazzling-diva
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## Project structure
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+```text
+app/
+  mainLayout/       Shared navigation, page layout, and footer
+  routes/           Homepage and storefront section components
+  app.css           Global styles and Tailwind CSS import
+  root.tsx          HTML document, metadata, and app error boundary
+  routes.ts         React Router route configuration
+public/             Static public assets
+Dockerfile          Multi-stage production container build
 ```
 
-## Styling
+The configured route is the homepage (`/`). Several navigation and category links are presentation placeholders and do not yet have matching routes. The current product and category lists live in the route components; no database, API, authentication, payment, or order-management integration is configured.
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+## Notes for contributors
 
----
-
-Built with ❤️ using React Router.
+- Update the sample product and category data in `app/routes/` when changing the storefront content.
+- Replace the placeholder navigation destinations and footer details with verified store routes and contact information before launch.
+- Keep `package-lock.json` in sync when dependencies change.
